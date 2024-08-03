@@ -1,54 +1,54 @@
 const Path = require('path');
 const Webpack = require('webpack');
-const merge = require('webpack-merge').merge;
+const { merge } = require('webpack-merge');
 const common = require('./webpack.common.js');
-const CleanWebpackPlugin = require('clean-webpack-plugin').CleanWebpackPlugin;
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+// const ESLintPlugin = require('eslint-webpack-plugin');
 
 const publicPath = process.env.BASENAME || '/';
 
 module.exports = merge(common, {
   mode: 'development',
-  devtool: 'cheap-source-map',
+  devtool: 'cheap-module-source-map',
   output: {
     path: Path.join(__dirname, '../build'),
-    chunkFilename: 'js/[name].chunk.js'
+    filename: 'js/[name].js',
+    chunkFilename: 'js/[name].chunk.js',
+    publicPath: publicPath,
   },
   devServer: {
-    static: Path.resolve(__dirname, 'build'),
+    static: {
+      directory: Path.resolve(__dirname, '../build'),
+    },
     compress: true,
-    public: publicPath,
     historyApiFallback: true,
-    host: '0.0.0.0'
+    host: '0.0.0.0',
+    port: 8080,
+    open: true,
+    client: {
+      overlay: true,
+    },
   },
   plugins: [
-    new CleanWebpackPlugin({ root: Path.resolve(__dirname, '..') }),
+    new CleanWebpackPlugin(),
     new Webpack.DefinePlugin({
       'process.env.NODE_ENV': JSON.stringify('development')
     }),
+    // new ESLintPlugin({
+    //   files: Path.resolve(__dirname, '../src'),
+    //   emitWarning: true
+    // }),
   ],
-
   module: {
     rules: [
       {
-        test: /\.(js|jsx)$/,
-        include: Path.resolve(__dirname, '../src'),
-        enforce: 'pre',
-        loader: 'eslint-loader',
-        options: {
-          emitWarning: true,
-        }
-      },
-      {
         test: /\.js$/,
         include: Path.resolve(__dirname, '../src'),
-        loader: 'babel-loader'
+        use: ['babel-loader']
       },
       {
         test: /\.css$/,
-        use: [
-          'style-loader',
-          'css-loader'
-        ]
+        use: ['style-loader', 'css-loader']
       }
     ]
   }

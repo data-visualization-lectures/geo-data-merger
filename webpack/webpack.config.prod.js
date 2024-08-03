@@ -1,9 +1,8 @@
 const Path = require('path');
 const Webpack = require('webpack');
-const merge = require('webpack-merge');
+const { merge } = require('webpack-merge');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const Autoprefixer = require('autoprefixer');
-const CleanWebpackPlugin = require('clean-webpack-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 const common = require('./webpack.common.js');
 
@@ -18,11 +17,14 @@ module.exports = merge(common, {
     chunkFilename: 'js/[name].[chunkhash:8].chunk.js'
   },
   plugins: [
-    new CleanWebpackPlugin(['docs'], { root: Path.resolve(__dirname, '..') }),
+    new CleanWebpackPlugin(),
     new Webpack.DefinePlugin({
       'process.env.NODE_ENV': JSON.stringify('production')
     }),
-    new MiniCssExtractPlugin({ filename: 'bundle.css' }),
+    new MiniCssExtractPlugin({ 
+      filename: 'css/[name].[contenthash:8].css',
+      chunkFilename: 'css/[id].[contenthash:8].css'
+    }),
     new Webpack.optimize.ModuleConcatenationPlugin()
   ],
   resolve: {
@@ -45,15 +47,21 @@ module.exports = merge(common, {
           {
             loader: 'postcss-loader',
             options: {
-              sourceMap: true,
-              ident: 'postcss',
-              plugins: () => [
-                Autoprefixer
-              ]
-            }
+              postcssOptions: {
+                plugins: [
+                  ['autoprefixer', {}],
+                ],
+              },
+            },
           }
         ]
       }
     ]
+  },
+  optimization: {
+    splitChunks: {
+      chunks: 'all',
+      name: false
+    }
   }
 });
