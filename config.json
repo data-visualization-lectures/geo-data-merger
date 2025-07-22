@@ -1,16 +1,16 @@
 {
   "meta": {
     "title": "Geo Data Merger",
-    "description": "A data merger for json, csv, geojson and topojson files.",
+    "description": "JSON、CSV、GeoJSON、TopoJSONファイルに対応したデータ結合ツール。",
     "viewport": "width=device-width, initial-scale=1",
     "robots": "index, follow"
   },
   "defaultDelimiters": [",", ";", "\t"],
   "downloadFormats": ["csv", "json", "geojson", "topojson"],
   "sections": [
-    { "title": "Choose your files", "subtitle": "We can handle json, csv, geojson and topojson files.<br /><strong>We don't upload your data.</strong> Everything stays in your browser." },
-    { "title": "Select keys to merge by", "subtitle": "Choose the keys to merge the data by." },
-    { "title": "Save", "subtitle": "Choose which keys should be included in your final result." }
+    { "title": "ファイルを選択してください", "subtitle": "JSON、CSV、GeoJSON、TopoJSONファイルを扱うことができます。<br /><strong>ユーザーのデータをどこかのサーバへアップロードすることはありません。</strong>データはすべてはローカル内に留まります。" },
+    { "title": "キーとなる列の選択", "subtitle": "データを結合するためのキーとなる列を選択してください。" },
+    { "title": "ファイルの保存", "subtitle": "最終的な結果に含める列を選択してください。" }
   ],
   "social": {
     "twitter": "Geo Data Merger - A tool for merging data sets by @funkeinteraktiv",
