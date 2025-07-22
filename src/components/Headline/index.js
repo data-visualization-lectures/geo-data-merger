@@ -31,7 +31,7 @@ export default () => (
   <>
     <Headline>
       <Title>(Geo) <Bold>DataMerger</Bold></Title>
-      <Subtitle>A small tool for merging datasets.</Subtitle>
+      <Subtitle>データセットを結合するためのスモール・ツール。</Subtitle>
     </Headline>
   </>
 );
