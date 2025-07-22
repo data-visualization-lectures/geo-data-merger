@@ -36,10 +36,6 @@ class Header extends PureComponent {
   render() {
     return (
       <HeaderWrapper>
-        <a href="https://twitter.com/funkeinteraktiv">
-          <Logo src={logoSrc} alt="Funke Logo" />
-          {/* <span>FUNKE <br />Interaktiv</span> */}
-        </a>
       </HeaderWrapper>
     );
   }
