@@ -64,8 +64,8 @@ class FileChooserSection extends PureComponent {
               onChange={this.props.setBaseData}
               onError={() => this.props.setError('base')}
               fileName={baseFileName}
-              dropText="Drop base file here"
-              textareaPlaceholder="Paste base data here ..."
+              dropText="ベースとなるファイルをドラッグしてください"
+              textareaPlaceholder="ベースとなるデータをコピペしてください"
             />
             {baseDataError && renderError()}
           </Column>
@@ -74,8 +74,8 @@ class FileChooserSection extends PureComponent {
               onChange={this.props.setMergeData}
               onError={() => this.props.setError('merge')}
               fileName={mergeFileName}
-              dropText="Drop merge file here"
-              textareaPlaceholder="Paste merge data here ..."
+              dropText="結合させるファイルをドラッグしてください"
+              textareaPlaceholder="結合させるデータをコピペしてください"
               isActive={hasBaseData}
             />
             {mergeDataError && renderError()}
