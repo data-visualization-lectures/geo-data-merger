@@ -39,7 +39,7 @@ class FileChooserSection extends PureComponent {
         style={{ marginTop: '8px' }}
         checked={this.props[`${fileType}FirstRowHeader`]}
         onChange={() => this.props.toggleFirstRowHeader(fileType)}
-        label="First row is header"
+        label="1行目が列名（ラベル）の場合、チェックを入れる"
       />
     );
   }

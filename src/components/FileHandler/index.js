@@ -165,8 +165,8 @@ class FileHandler extends PureComponent {
     return (
       <StyledTabs isActive={this.props.isActive}>
         <TabContainer>
-          <Tab>File</Tab>
-          <Tab>Copy & Paste</Tab>
+          <Tab>ファイルのアップロード</Tab>
+          <Tab>コピー&ペースト</Tab>
         </TabContainer>
         <TabPanel>
           <Dropzone
