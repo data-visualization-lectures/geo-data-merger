@@ -10,7 +10,7 @@
     "lint": "eslint src --max-warnings 0",
     "build": "cross-env NODE_ENV=production webpack --config webpack/webpack.config.prod.js",
     "start": "cross-env NODE_ENV=development webpack serve --config webpack/webpack.config.dev.js",
-    "deploy": "npm run build && git add docs_ja && git commit -m 'chore(site): update' && git push"
+    "deploy": "npm run build && git add docs && git commit -m 'chore(site): update' && git push"
   },
   "repository": {
     "url": "git@github.com:funkeinteraktiv/geo-data-merger.git",
