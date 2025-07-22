@@ -27,7 +27,7 @@ const step = 0;
 function renderError() {
   return (
     <ErrorMessage>
-      Please check if your data is valid json, csv, geojson or topojson.
+      選択したファイル JSON、CSV、GeoJSON、TopoJSONのデータ・フォーマットが正しいか確認してください。
     </ErrorMessage>
   );
 }
