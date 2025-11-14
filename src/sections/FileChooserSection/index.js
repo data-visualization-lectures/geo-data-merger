@@ -88,7 +88,7 @@ class FileChooserSection extends PureComponent {
           </Column>
           <ButtonWrapper isVisible={(hasBaseData && hasMergeData)}>
             <ButtonLight onClick={this.props.swapData}>
-              <SwapIcon height={16} />
+              <SwapIcon width={24} height={24} />
             </ButtonLight>
           </ButtonWrapper>
           <Column style={{ textAlign: 'center' }}>
