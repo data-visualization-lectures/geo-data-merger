@@ -70,6 +70,7 @@ const Drop = Styled.div`
   align-items: center;
   background: #eee;
   padding: 32px;
+  cursor: pointer;
 `;
 
 const CloseIconWrapper = Styled.div`
@@ -174,8 +175,9 @@ class FileHandler extends PureComponent {
             onDrop={(acceptedFiles) => this.onDrop(acceptedFiles)}
             multiple={false}
           >
-            {({ getRootProps }) => (
+            {({ getRootProps, getInputProps }) => (
               <Drop {...getRootProps()}>
+                <input {...getInputProps()} />
                 {this.renderFile()}
               </Drop>
             )}
