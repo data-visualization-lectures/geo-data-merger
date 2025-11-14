@@ -29,8 +29,7 @@ export default Styled.div`
       background-color: #ddd;
     }
 
-    &__top,
-    &__bot {
+    &__top {
       max-width 640px;
       padding:0 15px;
       margin: auto;
@@ -43,6 +42,10 @@ export default Styled.div`
 
     &__top {
       font-family: sans-serif;
+    }
+
+    &__source {
+      margin-bottom: 1.5em;
     }
 
     &__sharing {
@@ -112,8 +115,7 @@ export default Styled.div`
 
   @media screen and (min-width: 375px) {
     .footer {
-      .footer__top,
-      .footer__bot {
+      .footer__top {
         padding: 0 7%;
       }
     }
@@ -173,8 +175,7 @@ export default Styled.div`
       margin-top: 80px;
       padding-bottom: 80px;
 
-      .footer__top,
-      .footer__bot {
+      .footer__top {
         padding: 0 60px;
       }
     }
