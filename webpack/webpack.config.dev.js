@@ -24,7 +24,7 @@ module.exports = merge(common, {
     historyApiFallback: true,
     host: '0.0.0.0',
     port: 8080,
-    open: true,
+    open: ['/?auth_debug'],
     client: {
       overlay: true,
     },
