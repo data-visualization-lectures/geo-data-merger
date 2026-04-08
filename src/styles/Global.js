@@ -11,7 +11,7 @@ export default createGlobalStyle`
   }
 
   body {
-    padding: 0;
+    padding: 48px 0 0 0;
     margin: 0;
     position: relative;
     font-family: 'Roboto', sans-serif;
