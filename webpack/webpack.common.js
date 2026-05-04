@@ -21,7 +21,13 @@ module.exports = {
   },
   plugins: [
     new CopyWebpackPlugin({ patterns: [
-      { from: Path.resolve(__dirname, '../public'), to: 'public' }
+      {
+        from: Path.resolve(__dirname, '../public'),
+        to: 'public',
+        globOptions: {
+          ignore: ['**/.DS_Store']
+        }
+      }
     ]}),
     new Webpack.ProvidePlugin({
       config: '~/../config.json'
