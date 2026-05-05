@@ -1,5 +1,5 @@
 [build]
-  command = "npm run build"
+  command = "npm run build && cp _redirects build/_redirects"
   publish = "build"
 
 [build.environment]
